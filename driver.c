@@ -59,16 +59,16 @@ struct platform_driver driver = {
 
 int  hello_init(void)
 {
-	platform_device_register(&device);
 	platform_driver_register(&driver);
+	platform_device_register(&device);
 	printk("hello_init  \n");
 	return  0;
 }
 
 void  hello_exit(void)
 {	
-	platform_driver_unregister(&driver);
 	platform_device_unregister(&device);
+	platform_driver_unregister(&driver);
 	printk("hello_exit  \n");
 }
 

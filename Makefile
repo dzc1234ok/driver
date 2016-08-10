@@ -6,7 +6,7 @@ test:
 
 
 clean:
-	rm -rf *.ko *.o *.mod.* modules* Module*
+	rm -rf *.ko *.o *.mod.* modules* Module* .*.cmd .tmp_*
 	
 	
 obj-m = driver.o
