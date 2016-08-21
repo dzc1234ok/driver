@@ -10,12 +10,13 @@ static void hello_release(struct device *dev);
 
 struct file_operations led_fops = {
 	.owner = THIS_MODULE,
+	.open = led_open,
 };
 
 struct resource fs4412_led_resource[] = {
 	[0]= {	
 		.start  = 0x11000c40,
-		.end    = 0x11000c40+0x4,
+		.end    = 0x11000c40 + 0x4,
 		.flags  =IORESOURCE_MEM,
 	},
 	[1] = {
@@ -25,7 +26,7 @@ struct resource fs4412_led_resource[] = {
 	},
 	[2] = {
 		.start  = 0x114001e0,
-		.end  = 0x114001e0+0x4,
+		.end  = 0x114001e0 + 0x4,
 		.flags = IORESOURCE_MEM,
 	},
 };
